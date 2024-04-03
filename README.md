@@ -1,1 +1,1 @@
-Creando una sencilla "lista de tareas pendientes" desde cero.
+Creando una sencilla "Red Social" desde cero.
