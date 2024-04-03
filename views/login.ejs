@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+<main>
+  <div class="form-container">
+    <h2 class="press-start-text">Iniciar Sesión</h2>
+    <form action="/login" method="post">
+      <!-- Aquí va tu formulario de inicio de sesión -->
+      <!-- Por ejemplo: -->
+      <div class="form-group">
+        <input type="text" name="username" placeholder="Usuario">
+      </div>
+      <div class="form-group">
+        <input type="password" name="password" placeholder="Contraseña">
+      </div>
+      <div>
+        <a href="/login" class="btn">Iniciar Sesión</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+<%- include('partials/footer') -%>

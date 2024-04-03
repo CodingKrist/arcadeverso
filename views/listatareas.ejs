@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Tareas Pendientes</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <div class="list-container">
+    <h1>Lista de Tareas</h1>
+    <form action="/listatareas/crearTarea" method='POST' id="taskForm" onsubmit="addTask(event)">
+        <input type="text" id="taskInput" placeholder="Añadir nueva tarea..." name="tareaNueva" required>
+        <button type="submit">Añadir</button>
+    </form>
+    <ul id="taskList">
+      <!-- Las tareas se añadirán aquí -->
+      <% tareas.forEach( el => { %>
+        <li class='todoItem' data-id='<%=el._id%>'>
+            <span class='<%= el.completa === true ? 'completed' : 'not'%>'>• <%= el.tarea %></span>
+            <span class='fa fa-trash'></span>
+        </li>
+<% }) %>    
+    </ul>
+    <p class="pendiente">Tareas Pendientes: <%=incompletas%><span id="taskCount"></span></p>
+
+  </div>
+  <div class="centered">
+    <a href="/logout" class="button">Cerrar Sesión</a>
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>

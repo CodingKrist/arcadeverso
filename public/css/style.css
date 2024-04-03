@@ -1,0 +1,176 @@
+/* Estilos globales */
+
+.press-start {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 12px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul.left-buttons {
+  margin-right: auto;
+  padding-left: 20px;
+}
+
+nav ul.right-buttons {
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.banner-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(51, 51, 51, 1), rgba(51, 51, 51, 0) 20%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.welcome-text {
+  font-family: 'Press Start 2P', cursive, sans-serif;
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 30px;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Cambiar el color al pasar por encima */
+}
+
+
+footer {
+  background-color: #333;
+  color: #fff;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.form-container {
+  background-color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 400px; /* Ancho del formulario */
+  max-width: 400px; /* Ancho máximo del formulario */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio entre los elementos del formulario */
+}
+
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-group label {
+  display: block;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: calc(100% - 20px); /* Ancho del input */
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #555;
+  color: #fff;
+}
+
+.form-group input:focus {
+  outline: none;
+}
+
+.form-container form .btn {
+  display: inline-block;
+  padding: 8px 16px;
+}
+
+.press-start-text {
+  font-family: "Press Start 2P", cursive;
+  color: #fff;
+  text-align: center;
+}
