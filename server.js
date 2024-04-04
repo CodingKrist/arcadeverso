@@ -5,31 +5,42 @@ const passport = require('passport');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const flash = require('express-flash');
+const logger = require("morgan");
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
 const tareasRoutes = require('./routes/tareas');
 
+//Use .env file in config folder
 require('dotenv').config({ path: './config/.env' });
 
 // Passport config
 require('./config/passport')(passport);
 
+//Connect To Database
 connectDB();
 
+//Using EJS for views
 app.set('view engine', 'ejs');
+
+//Static Folder
 app.use(express.static('public'));
+
+//Body Parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Antes de crear la instancia de MongoStore, asegúrate de que la conexión a la base de datos se haya establecido
+//Logging
+app.use(logger("dev"));
+
+//Setup Sessions - stored in MongoDB
 mongoose.connection.once('open', () => {
-  // Crear una instancia de MongoStore
+  //MongoStore Instance
   const mongoStoreInstance = MongoStore.create({
     mongoUrl: process.env.DB_STRING,
     mongooseConnection: mongoose.connection,
   });
 
-  // Configurar express-session
+  //express-session
   app.use(
     session({
       secret: 'keyboard cat',
@@ -38,17 +49,20 @@ mongoose.connection.once('open', () => {
       store: mongoStoreInstance,
     })
   );
+});
 
-  // Passport middleware
-  app.use(passport.initialize());
-  app.use(passport.session());
+// Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
 
-  app.use(flash());
+//Use flash messages for errors, info, ect...
+app.use(flash());
 
-  app.use('/', mainRoutes);
-  app.use('/listatareas', tareasRoutes);
+//Setup Routes For Which The Server Is Listening
+app.use('/', mainRoutes);
+app.use('/listatareas', tareasRoutes);
 
-  app.listen(process.env.PORT, () => {
-    console.log('Server is running');
-  });
+//Server Running
+app.listen(process.env.PORT, () => {
+  console.log('Server is running');
 });
