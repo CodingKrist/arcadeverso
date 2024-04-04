@@ -174,3 +174,58 @@ footer {
   color: #fff;
   text-align: center;
 }
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.profile-info {
+  flex: 0 0 calc(50% - 20px); /* Anchura fija para el perfil del usuario */
+  margin-right: 20px;
+}
+
+.profile-box {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+.profile-details {
+  margin-top: 20px;
+}
+
+.add-post-form-container {
+  flex: 0 0 calc(50% - 20px); /* Anchura fija para el formulario de añadir publicación */
+}
+
+.add-post-form {
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-posts {
+  flex: 1 0 100%; /* Las publicaciones ocupan todo el espacio disponible */
+  margin-top: 20px;
+}
+
+.post-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cuadrícula de publicaciones */
+  grid-gap: 20px; /* Espacio entre las publicaciones */
+}
+
+.post {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.post img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+
