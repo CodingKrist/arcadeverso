@@ -8,7 +8,7 @@ const flash = require('express-flash');
 const logger = require("morgan");
 const connectDB = require('./config/database');
 const mainRoutes = require('./routes/main');
-const tareasRoutes = require('./routes/tareas');
+const postsRoutes = require('./routes/posts');
 
 //Use .env file in config folder
 require('dotenv').config({ path: './config/.env' });
@@ -32,24 +32,20 @@ app.use(express.json());
 //Logging
 app.use(logger("dev"));
 
-//Setup Sessions - stored in MongoDB
-mongoose.connection.once('open', () => {
-  //MongoStore Instance
-  const mongoStoreInstance = MongoStore.create({
-    mongoUrl: process.env.DB_STRING,
-    mongooseConnection: mongoose.connection,
-  });
-
-  //express-session
-  app.use(
-    session({
-      secret: 'keyboard cat',
-      resave: false,
-      saveUninitialized: false,
-      store: mongoStoreInstance,
-    })
-  );
+//express-session
+const mongoStoreInstance = MongoStore.create({
+  mongoUrl: process.env.DB_STRING,
+  mongooseConnection: mongoose.connection,
 });
+
+app.use(
+  session({
+    secret: 'keyboard cat',
+    resave: false,
+    saveUninitialized: false,
+    store: mongoStoreInstance,
+  })
+);
 
 // Passport middleware
 app.use(passport.initialize());
@@ -60,7 +56,7 @@ app.use(flash());
 
 //Setup Routes For Which The Server Is Listening
 app.use('/', mainRoutes);
-app.use('/listatareas', tareasRoutes);
+app.use('/posts', postsRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

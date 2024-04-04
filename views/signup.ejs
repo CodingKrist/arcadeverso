@@ -3,11 +3,9 @@
 <main>
   <div class="form-container">
     <h2 class="press-start-text">Registro</h2>
-    <form action="/register" method="post">
-      <!-- Aquí va tu formulario de registro -->
-      <!-- Por ejemplo: -->
+    <form action="/signup" method="POST">
       <div class="form-group">
-        <input type="text" name="username" placeholder="Usuario">
+        <input type="text" name="userName" placeholder="Usuario">
       </div>
       <div class="form-group">
         <input type="email" name="email" placeholder="Correo electrónico">
@@ -19,7 +17,7 @@
         <input type="password" name="confirmPassword" placeholder="Repetir Contraseña">
       </div>
       <div>
-        <a href="/signup" class="btn">Registrarse</a>
+        <button class="btn">Registrarse</button>
       </div>
     </form>
   </div>

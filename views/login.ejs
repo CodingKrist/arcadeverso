@@ -3,17 +3,15 @@
 <main>
   <div class="form-container">
     <h2 class="press-start-text">Iniciar Sesión</h2>
-    <form action="/login" method="post">
-      <!-- Aquí va tu formulario de inicio de sesión -->
-      <!-- Por ejemplo: -->
+    <form action="/login" method="POST">
       <div class="form-group">
-        <input type="text" name="username" placeholder="Usuario">
+        <input type="email" name="email" placeholder="Correo electrónico">
       </div>
       <div class="form-group">
         <input type="password" name="password" placeholder="Contraseña">
       </div>
       <div>
-        <a href="/login" class="btn">Iniciar Sesión</a>
+        <button class="btn">Iniciar Sesión</button>
       </div>
     </form>
   </div>
