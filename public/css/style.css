@@ -1,20 +1,7 @@
 /* Estilos globales */
-
-.press-start {
-  font-family: "Press Start 2P", system-ui;
-  font-weight: 400;
-  font-style: normal;
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  position: relative;
 }
 
 header {
@@ -112,10 +99,17 @@ nav ul li a {
   margin-right: 10px;
 }
 
+.btn.red {
+  background-color: #c10808;
+}
+
 .btn:hover {
   background-color: #0056b3; /* Cambiar el color al pasar por encima */
 }
 
+.btn.red:hover {
+  background-color: #880f0f; /* Cambiar el color al pasar por encima */
+}
 
 footer {
   background-color: #333;
@@ -138,6 +132,8 @@ footer {
 
 .form-group {
   margin-bottom: 20px; /* Espacio entre los elementos del formulario */
+  display: flex;
+  flex-direction: column;
 }
 
 .form-container form {
@@ -147,7 +143,7 @@ footer {
 
 .form-group label {
   display: block;
-  color: #fff;
+  color: #000000;
   margin-bottom: 5px;
 }
 
@@ -156,8 +152,8 @@ footer {
   padding: 10px;
   border-radius: 5px;
   border: none;
-  background-color: #555;
-  color: #fff;
+  background-color: rgb(255, 255, 255);
+  color: #000000;
 }
 
 .form-group input:focus {
@@ -176,28 +172,36 @@ footer {
 }
 
 .profile-container {
+  margin: 2% 8% 2% 8%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.profile-info {
-  flex: 0 0 calc(50% - 20px); /* Anchura fija para el perfil del usuario */
-  margin-right: 20px;
+.upper-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.bottom-container {
+  display: flex;
 }
 
 .profile-box {
+  min-width: 350px;
+  flex: 3;
   background-color: #eee;
   padding: 20px;
   border-radius: 20px; /* Bordes redondeados */
 }
 
-.profile-details {
-  margin-top: 20px;
+.add-post-form-container {
+  flex: 2;
+  min-width: 300px;
 }
 
-.add-post-form-container {
-  flex: 0 0 calc(50% - 20px); /* Anchura fija para el formulario de añadir publicación */
+.profile-details {
+  /* margin-top: 20px; */
 }
 
 .add-post-form {
@@ -206,15 +210,20 @@ footer {
   border-radius: 10px;
 }
 
+#description {
+  border-radius: 10px;
+  border: none;
+}
+
 .user-posts {
-  flex: 1 0 100%; /* Las publicaciones ocupan todo el espacio disponible */
-  margin-top: 20px;
+  /* flex: 1 0 100%; Las publicaciones ocupan todo el espacio disponible */
+  /* margin-top: 20px; */
 }
 
 .post-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Cuadrícula de publicaciones */
-  grid-gap: 20px; /* Espacio entre las publicaciones */
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Cuadrícula de publicaciones */
+  /* grid-gap: 20px; Espacio entre las publicaciones */
 }
 
 .post {
@@ -229,3 +238,100 @@ footer {
   border-radius: 5px;
 }
 
+.profile-box {
+  width: 60%;
+  background-color: #eee;
+  padding: 20px;
+  border-radius: 20px; /* Bordes redondeados */
+}
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-avatar img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%; /* Para que la foto de perfil aparezca redondeada */
+  border: 4px solid #cc2020b2; /* Añadir un borde blanco alrededor de la imagen de perfil */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra alrededor de la imagen */
+}
+
+.profile-name {
+  font-family: "Press Start 2P", sans-serif; /* Utilizar la fuente Press Start 2P */
+  font-size: 24px;
+  color: #333; /* Color del nombre */
+  margin-top: 10px;
+}
+
+.profile-details {
+  display: flex;
+  margin-top: 30px;
+}
+
+.profile-info {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-info h2, .user-posts h2, .add-post-form h2  {
+  font-family: "Press Start 2P", sans-serif; /* Utilizar la fuente Press Start 2P para los títulos */
+  font-size: 20px;
+  color: #333; /* Color del título */
+}
+
+.profile-games,
+.profile-description {
+  margin-bottom: 20px;
+}
+
+.profile-games h3 {
+  font-family: "Press Start 2P", sans-serif; /* Utilizar la fuente Press Start 2P para los títulos */
+  font-size: 18px;
+  color: #333; /* Color del título */
+}
+
+.profile-games ul {
+  list-style-type: none; /* Quitar las viñetas para las listas */
+  padding: 0;
+  margin: 0;
+}
+
+.profile-games li {
+  margin-bottom: 5px;
+}
+
+.profile-quotes {
+  text-align: center;
+  flex: 1;
+}
+
+.profile-quotes h2 {
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 20px;
+  color: #333;
+}
+
+.profile-quotes ul {
+  padding: 0;
+  margin: 0;
+}
+
+.profile-quotes li {
+  max-width: 300px; /* Anchura máxima */
+  margin-bottom: 20px; /* Espacio entre las citas */
+  padding: 15px;
+  background-color: rgba(0, 123, 255, 0.3); /* Azul transparente */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+  list-style-type: none; /* Eliminar el punto de la lista */
+  margin-left: auto; /* Alinear el contenido a la derecha */
+  margin-right: auto; /* Alinear el contenido a la izquierda */
+  font-style: italic;
+}
+
+.profile-quotes li em {
+  font-style: italic; /* Texto en cursiva */
+  color: #fff; /* Color del texto en cursiva */
+}
