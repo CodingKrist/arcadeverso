@@ -66,15 +66,18 @@
     <div class="bottom-container">
       <!-- Espacio para mostrar las publicaciones del usuario -->
       <div class="user-posts">
-        <h2>Mis Publicaciones</h2>
-        <div class="post-grid">
-          <!-- Aquí se muestran las publicaciones del usuario -->
-          <div class="post">
-            <img src="ruta/a/la/imagen-pequena.jpg" alt="Imagen de la publicación">
-            <h3>Título de la publicación</h3>
-          </div>
-          <!-- Repite este bloque para cada publicación del usuario -->
-        </div>
+        <div class="all-post">
+          <% for(var i=0; i<posts.length; i++) {%>
+            <div class="post">  
+              <a href="/post/<%= posts[i]._id%>">
+                <img src="<%= posts[i].image%>" alt="Imagen de la publicación">
+              </a>
+              <h3 class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
+              <p class="user">@<%= posts[i].userName%></p>
+              <p class="post-description"><%= posts[i].caption%></p>
+            </div>    
+          <% } %>
+        </div>  
       </div>
     </div>  
   </div> <!-- Cierre de la etiqueta profile-container -->

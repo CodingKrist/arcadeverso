@@ -30,7 +30,7 @@ module.exports = {
         try{
             // Upload image to cloudinary
             const result = await cloudinary.uploader.upload(req.file.path);
-
+            console.log(req.user)
             await Posts.create({
                 title: req.body.title,
                 image: result.secure_url,
@@ -38,6 +38,7 @@ module.exports = {
                 caption: req.body.caption,
                 likes: 0,
                 user: req.user.id,
+                userName: req.user.userName,
             });
             console.log('Post publicado')
             res.redirect('/feed')

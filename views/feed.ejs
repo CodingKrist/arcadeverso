@@ -2,14 +2,20 @@
 
 <main>
   <div class="feed-container">
-    <h2 class="press-start-text">Feed</h2>
+    <h2 class="press-start-text feed">Feed</h2>
     <!-- Aquí se mostrarían las publicaciones del feed -->
-    <div class="post">
-      <h3>Título de la publicación</h3>
-      <p>Contenido de la publicación...</p>
-      <img src="ruta/a/la/imagen.jpg" alt="Imagen de la publicación">
-    </div>
-    <!-- Repite este bloque para cada publicación en el feed -->
+    <div class="all-post">
+      <% for(var i=0; i<posts.length; i++) {%>
+        <div class="post">  
+          <a href="/post/<%= posts[i]._id%>">
+            <img src="<%= posts[i].image%>" alt="Imagen de la publicación">
+          </a>
+          <h3 class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
+          <p class="user">@<%= posts[i].userName%></p>
+          <p class="post-description"><%= posts[i].caption%></p>
+        </div>    
+      <% } %>
+    </div>  
   </div>
 </main>
 
