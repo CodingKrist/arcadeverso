@@ -156,10 +156,15 @@ footer {
 .form-group input {
   width: calc(100% - 20px); /* Ancho del input */
   padding: 10px;
-  border-radius: 5px;
-  border: none;
+  border-radius: 10px;
   background-color: rgb(255, 255, 255);
   color: #000000;
+  border: 1px solid #ccc; 
+}
+
+
+textarea, input[type="text"], input[type='password'], select {
+  border: 1px solid #ccc;
 }
 
 .form-group input:focus {
@@ -223,11 +228,12 @@ color: black;
   border-radius: 10px;
 }
 
+
 #description {
   border-radius: 10px;
-  border: none;
   padding: 10px;
 }
+
 
 input[type="text"],
 textarea {
