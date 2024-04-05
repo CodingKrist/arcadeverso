@@ -5,9 +5,10 @@ const postsController = require('../controllers/posts')
 const { ensureAuth } = require("../middleware/auth");
 
 
-router.get('/', ensureAuth, postsController.getPost);
+//router.get('/', ensureAuth, postsController.getPost);
 
-router.post('/crearPost', postsController.crearPost)
+router.post("/crearPost", upload.single("file"), postsController.crearPost);
+
 
 //router.delete('/deletePost', postsController.deletePost)
 

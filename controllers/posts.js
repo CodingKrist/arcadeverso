@@ -18,14 +18,14 @@ module.exports = {
           console.log(err);
         }
     },
-    getPost: async (req,res)=>{
-        try{
-            const allPosts = await Posts.findById(req.params.id);
-            res.render('posts.ejs', {posts: allPost, user: req.user})
-        }catch(err){
-            console.log(err)
-        }
-    },
+    // getPost: async (req,res)=>{
+    //     try{
+    //         const allPosts = await Posts.findById(req.params.id);
+    //         res.render('posts.ejs', {posts: allPost, user: req.user})
+    //     }catch(err){
+    //         console.log(err)
+    //     }
+    // },
     crearPost: async (req, res)=>{
         try{
             // Upload image to cloudinary

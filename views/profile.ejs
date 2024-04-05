@@ -45,20 +45,20 @@
       <div class="add-post-form-container">
         <div class="add-post-form">
           <h2>Añadir Publicación</h2>
-          <form action="/profile/add-post" method="post" enctype="multipart/form-data">
+          <form action="/posts/crearPost" enctype="multipart/form-data" method="POST">
             <div class="form-group">
               <label for="title">Título</label>
               <input type="text" id="title" name="title" required>
             </div>
             <div class="form-group">
               <label for="description">Descripción</label>
-              <textarea id="description" name="description" rows="4" required></textarea>
+              <textarea id="description" name="caption" rows="4" required></textarea>
             </div>
             <div class="form-group">
               <label for="image">Imagen</label>
-              <input type="file" id="image" name="image" accept="image/*" required>
+              <input type="file" id="image" name="file" accept="image/*" required>
             </div>
-            <button type="submit" class="btn">Publicar</button>
+            <button type="submit" class="btn" value="Upload">Publicar</button>
           </form>
         </div>
       </div>
