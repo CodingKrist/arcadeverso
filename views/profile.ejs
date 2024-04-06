@@ -63,16 +63,17 @@
         </div>
       </div>
     </div>
+    <h2 class="press-start-text profile">Mis publicaciones</h2>
     <div class="bottom-container">
       <!-- Espacio para mostrar las publicaciones del usuario -->
       <div class="user-posts">
         <div class="all-post">
           <% for(var i=0; i<posts.length; i++) {%>
             <div class="post">  
-              <a href="/post/<%= posts[i]._id%>">
+              <a href="/posts/<%= posts[i]._id%>">
                 <img src="<%= posts[i].image%>" alt="Imagen de la publicación">
               </a>
-              <h3 class="title"><a href="/post/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
+              <h3 class="title"><a href="/posts/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
               <p class="user">@<%= posts[i].userName%></p>
               <p class="post-description"><%= posts[i].caption%></p>
             </div>    

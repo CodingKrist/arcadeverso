@@ -1,0 +1,86 @@
+<%- include('partials/header') -%>
+
+<main>
+  <div class="profile-container">
+    <!-- Perfil del usuario -->
+    <div class="upper-container">
+      <div class="profile-box">
+        <div class="posts">
+          <img src="<%= posts.image %>" alt="Post Image">
+          <div class="post-buttons">
+            <button class="like-button">Like</button>
+            <button class="delete-button">Delete</button>
+          </div>
+        </div>
+        <div class="post-details">
+          <h2 class="post-title"><%= posts.title %></h2>
+          <p class="post-description"><%= posts.caption %></p>
+        </div>
+      </div>
+
+      <!-- Formulario para añadir un post -->
+      <div class="add-post-form-container">
+        <div class="add-post-form posts">
+          <h2>Comentarios</h2>
+          <div class="comments-box">
+            <!-- Recuadro para comentarios -->
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <div class="comment">
+              <p>Otro comentario de ejemplo</p>
+            </div>
+            <!-- Aquí van los comentarios -->
+            
+          </div>
+          <div class="add-post-form">
+            <h2 class="section-title">Add a Comment</h2>            
+            <form action="/post/<%= posts.id %>" method="POST">
+              <div class="form-group">
+                <textarea id="description" name="caption" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn" value="Upload">Publicar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h2 class="press-start-text profile"></h2>
+    <div class="bottom-container">
+      <div class="user-posts">
+        <div class="all-post">          
+        </div>  
+      </div>
+    </div>  
+  </div>
+</main> -->
+
+<%- include('partials/footer') -%>
