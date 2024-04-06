@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
       // Truncar el texto si es mayor que la longitud máxima
       if (text.length > maxLength) {
-        var truncatedText = text.substring(0, maxLength) + '...';
+        var truncatedText = text.substring(0, maxLength) + '... '+ ' Leer más';
         description.textContent = truncatedText;
       }
     });

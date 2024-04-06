@@ -4,7 +4,11 @@ const mongoose = require('mongoose');
 const UserSchema = new mongoose.Schema({
   userName: { type: String, unique: true },
   email: { type: String, unique: true },
-  password: String
+  password: String,
+  profilePic: String,
+  description: String,
+  games: [String], // Array de strings
+  quotes: [String],
 });
 
 // Password hash middleware.
