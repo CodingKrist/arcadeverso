@@ -289,6 +289,18 @@ textarea {
   }
 }
 
+@media only screen and (max-width: 915px) {
+  .all-post {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .upper-container {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .press-start-text.profile {
     margin-left: 10px;
@@ -297,6 +309,13 @@ textarea {
 }
 
 @media only screen and (max-width: 480px) {
+  .press-start-text.profile {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 915px) {
   .press-start-text.profile {
     margin-left: 10px;
     margin-right: 10px;
