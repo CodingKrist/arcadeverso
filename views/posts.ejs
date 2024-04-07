@@ -2,24 +2,25 @@
 
 <main>
   <div class="profile-container">
-    <!-- Perfil del usuario -->
+    <!-- Contenedor de la parte superior -->
     <div class="upper-container">
-      <div class="profile-box">
-        <div class="posts">
+      <!-- Publicación -->
+      <div class="profile-box"> <!-- Mantén el estilo de perfil en la izquierda -->
+        <div class="posts"> <!-- Ajusta el estilo del post para que vaya a la izquierda -->       
+          <h2 class="post-title"><%= posts.title %></h2>
           <img src="<%= posts.image %>" alt="Post Image">
           <div class="post-buttons">
             <button class="like-button">Like</button>
             <button class="delete-button">Delete</button>
           </div>
-        </div>
-        <div class="post-details">
-          <h2 class="post-title"><%= posts.title %></h2>
-          <p class="post-description"><%= posts.caption %></p>
+          <div class="post-details">
+            <p class="post-description"><%= posts.caption %></p>
+          </div>
         </div>
       </div>
 
-      <!-- Formulario para añadir un post -->
-      <div class="add-post-form-container">
+      <!-- Comentarios y formulario -->
+      <div class="add-post-form-container"> <!-- Ajusta el estilo del contenedor de comentarios para que vaya a la derecha -->
         <div class="add-post-form posts">
           <h2>Comentarios</h2>
           <div class="comments-box">
@@ -54,14 +55,10 @@
             <div class="comment">
               <p>Otro comentario de ejemplo</p>
             </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <!-- Aquí van los comentarios -->
-            
+            <!-- Aquí van más comentarios -->
           </div>
           <div class="add-post-form">
-            <h2 class="section-title">Add a Comment</h2>            
+            <h2 class="section-title">Add a Comment</h2>
             <form action="/post/<%= posts.id %>" method="POST">
               <div class="form-group">
                 <textarea id="description" name="caption" rows="4" required></textarea>
@@ -72,15 +69,7 @@
         </div>
       </div>
     </div>
-
-    <!-- <h2 class="press-start-text profile"></h2>
-    <div class="bottom-container">
-      <div class="user-posts">
-        <div class="all-post">          
-        </div>  
-      </div>
-    </div>  
   </div>
-</main> -->
+</main>
 
 <%- include('partials/footer') -%>
