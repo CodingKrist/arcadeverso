@@ -10,8 +10,13 @@
           <h2 class="post-title"><%= posts.title %></h2>
           <img src="<%= posts.image %>" alt="Post Image">
           <div class="post-buttons">
-            <button class="like-button">Like</button>
-            <button class="delete-button">Delete</button>
+            <div class="like">
+             <div class="fa-solid fa-heart"></div>
+             <div><%= posts.likes %></div>
+            </div>
+            <div class="delete">
+              <div class="fa fa-trash"></div>
+            </div>
           </div>
           <div class="post-details">
             <p class="post-description"><%= posts.caption %></p>

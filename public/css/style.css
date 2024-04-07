@@ -264,22 +264,46 @@ textarea {
 @media only screen and (max-width: 768px) {
   .all-post {
     grid-template-columns: repeat(2, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .upper-container {
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .all-post {
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 
   .upper-container {
     grid-template-columns: repeat(1, 1fr);
+    margin-left: 10px;
+    margin-right: 10px;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .press-start-text.profile {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .press-start-text.profile {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
 
 .post {
   background-color: #f4f3f3;
@@ -299,7 +323,7 @@ textarea {
   max-height: 200px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -312,10 +336,16 @@ textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+
+
 .post .title {
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+}
+
+h3 {
+  margin: 0;
 }
 
 .post .user {
@@ -504,3 +534,25 @@ textarea {
 .add-post-form-container {
   min-width: 0;
 } */
+
+.fa-heart:hover {
+  color: red; /* Cambia el color del icono a rojo cuando el ratón está sobre él */
+}
+
+.fa-trash:hover {
+  color: #007bff;
+}
+
+.post-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like {
+  display: flex;
+  gap: 5px;
+}
+
+.posts .post-description {
+  margin: 40px 0;
+}

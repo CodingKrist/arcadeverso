@@ -10,6 +10,10 @@
           <a href="/posts/<%= posts[i]._id%>">
             <img src="<%= posts[i].image%>" alt="Imagen de la publicación">
           </a>
+          <div class="like">
+            <div class="fa-solid fa-heart"></div>
+            <div><%= posts[i].likes %></div>
+          </div>
           <h3 class="title"><a href="/posts/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
           <p class="user">@<%= posts[i].userName%></p>
           <p class="post-description"><%= posts[i].caption%></p>
