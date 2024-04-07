@@ -530,6 +530,13 @@ h3 {
 .like {
   display: flex;
   gap: 5px;
+  align-items: center;
+}
+
+.like button, .delete button {
+  padding: 0;
+  border: none; /* Elimina el borde */
+  cursor: pointer;
 }
 
 .posts .post-description {

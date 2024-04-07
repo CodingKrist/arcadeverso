@@ -19,9 +19,10 @@ module.exports = {
         }
     },
     getPost: async (req, res) => {
+      //console.log(req.originalUrl)
       try {
         const post = await Posts.findById(req.params.id);
-        res.render("posts.ejs", { posts: post, user: req.user });
+        res.render("posts.ejs", { posts: post, user: req.user, currentPage: req.originalUrl });
       } catch (err) {
         console.log(err);
       }
@@ -48,6 +49,7 @@ module.exports = {
     },
     
     likePost: async (req, res) => {
+      //console.log(req.query.currentPage)
       try {
         await Posts.findOneAndUpdate(
           { _id: req.params.id },
@@ -56,11 +58,30 @@ module.exports = {
           }
         );
         console.log("Likes +1");
-        res.redirect(req.query.currentUrl || '/');
+        const currentUrl = req.query.currentPage;
+        res.redirect(currentUrl);
+        res.redirect('/')
       } catch (err) {
         console.log(err);
       }
     },
+
+    deletePost: async (req, res) => {
+      console.log(req.params.id)
+      try {
+        // Find post by id
+        let post = await Posts.findById({ _id: req.params.id });
+        // Delete image from cloudinary
+        await cloudinary.uploader.destroy(post.cloudinaryId);
+        // Delete post from db
+        await Posts.deleteOne({ _id: req.params.id });
+        console.log("Deleted Post");
+        res.redirect("/profile");
+      } catch (err) {
+        res.redirect("/profile");
+      }
+    },
+
     // markComplete: async (req, res)=>{
     //     try{
     //         await Tareas.findOneAndUpdate({_id:req.body.tareaIdFromJSFile},{
