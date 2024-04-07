@@ -210,6 +210,7 @@ textarea, input[type="text"], input[type='password'], select {
   grid-template-columns: repeat(2, 1fr); 
   grid-gap: 40px; 
   padding: 40px 0;
+  margin: 0 10px;
   /* align-items: stretch; */
 }
 
@@ -259,69 +260,28 @@ textarea {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
   grid-gap: 40px; 
+  margin: 0 10px;
 }
 
 @media only screen and (max-width: 768px) {
   .all-post {
     grid-template-columns: repeat(2, 1fr);
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .upper-container {
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 10px;
-    margin-right: 10px;
   }
 }
 
 @media only screen and (max-width: 480px) {
   .all-post {
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 10px;
-    margin-right: 10px;
   }
 
   .upper-container {
     grid-template-columns: repeat(1, 1fr);
-    margin-left: 10px;
-    margin-right: 10px;
   }
 }
-
-@media only screen and (max-width: 915px) {
-  .all-post {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-
-  .upper-container {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  .press-start-text.profile {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
-@media only screen and (max-width: 480px) {
-  .press-start-text.profile {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
-@media only screen and (max-width: 915px) {
-  .press-start-text.profile {
-    margin-left: 10px;
-    margin-right: 10px;
-  }
-}
-
 
 
 .post {
@@ -574,4 +534,8 @@ h3 {
 
 .posts .post-description {
   margin: 40px 0;
+}
+
+.press-start-text.profile {
+  margin: 10px 10px;
 }
