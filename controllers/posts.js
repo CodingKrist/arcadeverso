@@ -1,11 +1,12 @@
 const cloudinary = require("../middleware/cloudinary");
 const Posts = require('../models/Posts')
+const Comments = require("../models/Comments");
 
 module.exports = {
     getProfile: async (req, res) => {
         try {
           const posts = await Posts.find({ user: req.user.id });
-          res.render("profile.ejs", { posts: posts, user: req.user });
+          res.render("profile.ejs", { posts: posts, user: req.user, currentPage: req.originalUrl });
         } catch (err) {
           console.log(err);
         }
@@ -13,7 +14,7 @@ module.exports = {
     getFeed: async (req, res) => {
         try {
           const posts = await Posts.find().sort({ createdAt: "desc" }).lean();
-          res.render("feed.ejs", { posts: posts });
+          res.render("feed.ejs", { posts: posts, currentPage: req.originalUrl });
         } catch (err) {
           console.log(err);
         }
@@ -22,7 +23,8 @@ module.exports = {
       //console.log(req.user)
       try {
         const post = await Posts.findById(req.params.id);
-        res.render("posts.ejs", { posts: post, user: req.user, currentPage: req.originalUrl });
+        const comments = await Comments.find({post: req.params.id}).sort({ createdAt: "desc" }).lean();
+        res.render("posts.ejs", { posts: post, user: req.user, currentPage: req.originalUrl, comments: comments });
       } catch (err) {
         console.log(err);
       }
@@ -60,7 +62,6 @@ module.exports = {
         console.log("Likes +1");
         const currentUrl = req.query.currentPage;
         res.redirect(currentUrl);
-        res.redirect('/')
       } catch (err) {
         console.log(err);
       }

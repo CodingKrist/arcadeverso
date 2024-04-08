@@ -37,43 +37,18 @@
           <h2>Comentarios</h2>
           <div class="comments-box">
             <!-- Recuadro para comentarios -->
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
+            <% for(let i=0; i<comments.length; i++) { %>
+            <div class="comment <%= i % 2 === 0 ? 'align-left' : 'align-right' %>">
+              <p class="comment-user">@<%= comments[i].userName %>:</p>
+              <p class="comment-text"><%= comments[i].comment %></p>
             </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <div class="comment">
-              <p>Otro comentario de ejemplo</p>
-            </div>
-            <!-- Aquí van más comentarios -->
+            <% } %>
           </div>
           <div class="add-post-form">
             <h2 class="section-title">Add a Comment</h2>
             <form action="/comments/createComment/<%= posts.id %>" method="POST">
               <div class="form-group">
-                <textarea id="description" name="comment" rows="4" required></textarea>
+                <textarea id="description" name="comment" rows="4" maxlength="250" required></textarea>
               </div>
               <button type="submit" class="btn" value="Upload">Publicar</button>
             </form>

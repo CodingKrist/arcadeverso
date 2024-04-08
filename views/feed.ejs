@@ -5,14 +5,17 @@
     <h2 class="press-start-text feed">Feed</h2>
     <!-- Aquí se mostrarían las publicaciones del feed -->
     <div class="all-post">
-      <% for(var i=0; i<posts.length; i++) {%>
+      <% for(let i=0; i<posts.length; i++) {%>
         <div class="post">  
           <a href="/posts/<%= posts[i]._id%>">
             <img src="<%= posts[i].image%>" alt="Imagen de la publicación">
           </a>
           <div class="like">
-            <div class="fa-solid fa-heart"></div>
-            <div><%= posts[i].likes %></div>
+            <form action="/posts/likePost/<%= posts[i]._id %>?_method=PUT&currentPage=<%= currentPage %>" method="POST">
+              <input value="<%=posts.id%>" type="hidden" name="currentUrl">
+              <button class="fa-solid fa-heart" type="submit"></button>
+            </form>
+           <div><%= posts[i].likes %></div>
           </div>
           <h3 class="title"><a href="/posts/<%= posts[i]._id%>"><%= posts[i].title %></a></h3>
           <p class="user">@<%= posts[i].userName%></p>

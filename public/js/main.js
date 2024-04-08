@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
   // Verificar si estamos en la página específica antes de ejecutar el código
-  if (window.location.pathname === '/feed' || '/profile') {
+  if (window.location.pathname === '/feed' || window.location.pathname === '/profile') {
       // Ejecutar el código solo si estamos en la página /feed
       var postDescriptions = document.querySelectorAll('.post-description');
 

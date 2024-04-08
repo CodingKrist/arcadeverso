@@ -2,7 +2,6 @@ const Comments = require("../models/Comments");
 
 module.exports = {
   createComment: async (req, res) => {
-    console.log(req.user)
     try {
       await Comments.create({
         comment: req.body.comment,
@@ -17,3 +16,4 @@ module.exports = {
     }
   },
 };
+
