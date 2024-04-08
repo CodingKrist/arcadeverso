@@ -19,7 +19,7 @@ module.exports = {
         }
     },
     getPost: async (req, res) => {
-      //console.log(req.originalUrl)
+      //console.log(req.user)
       try {
         const post = await Posts.findById(req.params.id);
         res.render("posts.ejs", { posts: post, user: req.user, currentPage: req.originalUrl });
@@ -42,7 +42,7 @@ module.exports = {
                 userName: req.user.userName,
             });
             console.log('Post publicado')
-            res.redirect('/feed')
+            res.redirect('/profile')
         }catch(err){
             console.log(err)
         }

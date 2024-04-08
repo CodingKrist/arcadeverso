@@ -1,18 +1,22 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var postDescriptions = document.querySelectorAll('.post-description');
+  // Verificar si estamos en la página específica antes de ejecutar el código
+  if (window.location.pathname === '/feed' || '/profile') {
+      // Ejecutar el código solo si estamos en la página /feed
+      var postDescriptions = document.querySelectorAll('.post-description');
+
+      postDescriptions.forEach(function(description) {
+          var maxLength = 100; // Número máximo de caracteres
+          var text = description.textContent;
   
-    postDescriptions.forEach(function(description) {
-      var maxLength = 100; // Número máximo de caracteres
-      var text = description.textContent;
-  
-      // Truncar el texto si es mayor que la longitud máxima
-      if (text.length > maxLength) {
-        var truncatedText = text.substring(0, maxLength) + '... '+ ' Leer más';
-        description.textContent = truncatedText;
-      }
-    });
-  });
-  
+          // Truncar el texto si es mayor que la longitud máxima
+          if (text.length > maxLength) {
+              var truncatedText = text.substring(0, maxLength) + ' ...';
+              description.textContent = truncatedText;
+          }
+      });
+  }
+});
+
 
 // const deleteBtn = document.querySelectorAll('.fa-trash')
 // const markDone = document.querySelectorAll('.not')

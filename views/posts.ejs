@@ -71,9 +71,9 @@
           </div>
           <div class="add-post-form">
             <h2 class="section-title">Add a Comment</h2>
-            <form action="/post/<%= posts.id %>" method="POST">
+            <form action="/comments/createComment/<%= posts.id %>" method="POST">
               <div class="form-group">
-                <textarea id="description" name="caption" rows="4" required></textarea>
+                <textarea id="description" name="comment" rows="4" required></textarea>
               </div>
               <button type="submit" class="btn" value="Upload">Publicar</button>
             </form>
