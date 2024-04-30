@@ -7,7 +7,7 @@
       <div class="profile-box">
         <div class="profile-header">
           <div class="profile-avatar">
-            <img src="" alt="Foto de perfil">
+            <img src="<%= user.profilePic %>" alt="Foto de perfil">
           </div>
           <div class="profile-name">
             <%= user.userName %>
@@ -17,7 +17,7 @@
           <div class="profile-info">
             <h2>Perfil</h2>
             <div class="profile-description">
-              Descripción del perfil...
+              <%= user.description %>
             </div>
             <div class="profile-games">
               <h3>Juegos Favoritos</h3>
