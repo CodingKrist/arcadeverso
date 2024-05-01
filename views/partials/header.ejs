@@ -19,8 +19,10 @@
           <li><a href="/feed">Inicio</a></li>
         </ul>
         <ul class="right-buttons">
+          <% if (user) { %>
           <li><a href="/profile">Perfil</a></li>
           <li><a href="/logout">Cerrar Sesión</a></li>
+          <% } %>
         </ul>
       </nav>
     </header>
