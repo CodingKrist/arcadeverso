@@ -18,7 +18,6 @@ Este es un proyecto diseñado como una práctica para entender los conceptos del
 
 ![Whiteboard](public/imgs/brainstorm.png)
 
-## Capturas de pantalla
+## Demostración
 
-![Captura de pantalla 1](screenshot1.png)
-![Captura de pantalla 2](screenshot2.png)
+![Gif demostracion](public/imgs/demo.gif)
