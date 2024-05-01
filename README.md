@@ -14,6 +14,10 @@ Este es un proyecto diseñado como una práctica para entender los conceptos del
 - Passport.js
 - EJS (Embedded JavaScript)
 
+## Lluvia de ideas inicial
+
+![Whiteboard](public/imgs/brainstorm.png)
+
 ## Capturas de pantalla
 
 ![Captura de pantalla 1](screenshot1.png)
